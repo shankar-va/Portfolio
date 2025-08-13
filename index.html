@@ -7,6 +7,188 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Academic Excellence Section */
+        .leetcode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.leetcode-chart {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+.circle-card {
+    text-align: center;
+}
+
+
+svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+}
+
+.bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3;
+}
+
+.progress {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    animation: progressAnimation 2s ease-out forwards;
+}
+
+.progress.easy { stroke: #4ade80; }    /* green */
+.progress.medium { stroke: #facc15; } /* yellow */
+.progress.hard { stroke: #ef4444; }   /* red */
+.progress.success { stroke: #60a5fa; }/* blue */
+
+.percentage {
+    fill: #333;
+    font-size: 0.5em;
+    text-anchor: middle;
+    transform: rotate(90deg);
+}
+
+@keyframes progressAnimation {
+    from { stroke-dasharray: 0, 100; }
+}
+
+.academic-container {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    color: white;
+    max-width: 900px;
+    margin: 3rem auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.academic-container .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.academic-container .header p {
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.education-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.education-item {
+    background: rgba(255,255,255,0.95);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.institution {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.current-badge {
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+}
+
+.date-badge {
+    background: var(--secondary-color);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+.performance-container {
+    margin-top: 0.5rem;
+}
+
+.performance-bar {
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.performance-fill {
+    background: var(--accent-color);
+    height: 100%;
+    transition: width 1s ease;
+}
+
+.highlight-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.highlight-stats .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.highlight-stats .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9; 
+    color: white;
+}
+.cert-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cert-btn:hover {
+    background: linear-gradient(135deg, #f107a3, #7b2ff7);
+    transform: scale(1.05);
+}
+
+
         /* CSS Variables for consistent theming */
         :root {
             --primary-color: #E6E6FA; /* Lavender */
@@ -849,65 +1031,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Achievements Section -->
-    <section class="section achievements" id="achievements">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Achievements & Certifications</h2>
-                <p class="section-subtitle">Milestones that showcase my dedication to continuous learning</p>
-            </div>
-            <div class="achievements-grid fade-in">
-                <div class="achievement-item">
-                    <div class="achievement-title">Java Course - Mastering the Fundamentals</div>
-                    <div class="achievement-provider">Scaler Topics</div>
-                    <div class="achievement-date">December 2024</div>
-                    <div class="achievement-description">
-                        Comprehensive certification covering 86 video tutorials, 12 modules, and 9 challenges in Java programming fundamentals, 
-                        object-oriented concepts, and advanced Java features.
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-title">Web Technology Certification</div>
-                    <div class="achievement-provider">SWAYAM - IGNOU & Uttarakhand Open University</div>
-                    <div class="achievement-date">May 2025</div>
-                    <div class="achievement-description">
-                        4-credit course certification with 88% marks in proctored examination covering HTML, CSS, JavaScript, 
-                        and modern web development practices.
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-title">Generative AI for Everyday Life</div>
-                    <div class="achievement-provider">SWAYAM - Krishna Kanta Handiqui State Open University</div>
-                    <div class="achievement-date">May 2025</div>
-                    <div class="achievement-description">
-                        4-credit course certification with 97% marks covering artificial intelligence fundamentals, 
-                        machine learning concepts, and practical AI applications in daily life.
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-title">115+ LeetCode Problems Solved</div>
-                    <div class="achievement-provider">LeetCode Platform</div>
-                    <div class="achievement-date">Ongoing</div>
-                    <div class="achievement-description">
-                        Demonstrated strong problem-solving skills and algorithmic thinking by successfully solving 115+ coding problems 
-                        across various difficulty levels, focusing on data structures and algorithms optimization.
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-title">Academic Excellence</div>
-                    <div class="achievement-provider">Academic Institutions</div>
-                    <div class="achievement-date">2020-2022</div>
-                    <div class="achievement-description">
-                        Consistent academic performance with 88.8% in SSLC and 86.3% in HSC, along with a strong CGPA of 7.85/10 
-                        in Computer Science Engineering, showcasing dedication and discipline in learning.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
+<!--Projects Section -->
     <section class="section projects" id="projects">
         <div class="section-container">
             <div class="section-header fade-in">
@@ -938,9 +1062,202 @@
         </div>
     </section>
 
+    <!-- Achievements Section -->
+    <section class="section achievements" id="achievements">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Achievements & Certifications</h2>
+                <p class="section-subtitle">Milestones that showcase my dedication to continuous learning</p>
+            </div>
+            <div class="achievements-grid fade-in">
+                <div class="achievement-item">
+                    <div class="achievement-title">Generative AI for Everyday Life</div>
+                    <div class="achievement-provider">SWAYAM - Krishna Kanta Handiqui State Open University
+
+                    </div>
+                    <!-- <div class="achievement-date">May 2025</div> -->
+                     <div class="achievement-meta">
+                        <span><strong>Score:</strong> 97%</span>
+                        <span><strong>Provider:</strong> IGNOU & Uttarakhand Open University</span>
+                        <span><strong>Date:</strong> 24-May-2025</span>
+                        <br></br>
+                    </div>
+                    <div class="achievement-description">
+                        4-credit course certification with 97% marks covering artificial intelligence fundamentals, 
+                        machine learning concepts, and practical AI applications in daily life.
+                    </div>
+                    <div><a href="https://drive.google.com/file/d/1_NPtDbhmDFG_tcrnRR3GsybemtIOKWUj/view?usp=drivesdk" target="_blank" class="cert-btn">View Certificate</a></div>
+                    
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-title">Web Technology Certification</div>
+                    <!-- <div class="achievement-provider">SWAYAM - IGNOU & Uttarakhand Open University</div>
+                    <div class="achievement-date">May 2025</div> -->
+                    <div class="achievement-meta">
+                        <span><strong>Score:</strong> 88%</span>
+                        <span><strong>Provider:</strong> IGNOU & Uttarakhand Open University</span>
+                        <span><strong>Date:</strong> May 2025</span>
+                        <br></br>
+                    </div>
+                    <div class="achievement-description">
+                        4-credit course certification with 88% marks in proctored examination covering HTML, CSS, JavaScript, 
+                        and modern web development practices.
+                    </div><div><a href="https://drive.google.com/file/d/1_LcaDQw9EYar6VfaD-JE5XnYvQ820lhQ/view?usp=drivesdk" target="_blank" class="cert-btn">View Certificate</a></div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title">Java Course - Mastering the Fundamentals</div>
+                    <!-- <div class="achievement-provider">Scaler Topics</div>
+                    <div class="achievement-date">December 2024</div> -->
+                    <div class="achievement-meta">
+                        <span><strong>Modules:</strong> 12</span>
+                        <span><strong>Provider:</strong> Scaler Topics</span>
+                        <span><strong>Date:</strong>12-December-2024</span>
+                        <br></br>
+                    </div>
+                    <div class="achievement-description">
+                        Comprehensive certification covering 86 video tutorials, 12 modules, and 9 challenges in Java programming fundamentals, 
+                        object-oriented concepts, and advanced Java features.
+                    </div><div><a href="https://drive.google.com/file/d/1_GBY0XMXIcOWohNfKgaK3rHZonUMiE4o/view?usp=drivesdk" target="_blank" class="cert-btn">View Certificate</a></div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-title">115+ LeetCode Problems Solved</div>
+                    <div class="achievement-provider">LeetCode Platform</div>
+                    <div class="achievement-date">Ongoing</div>
+                    <div class="achievement-description">
+                        Demonstrated strong problem-solving skills and algorithmic thinking by successfully solving 115+ coding problems 
+                        across various difficulty levels, focusing on data structures and algorithms optimization.
+                    </div><div><a href="https://leetcode.com/u/D77YQlo87I/" target="_blank" class="cert-btn">View Leetcode</a></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="academic-container">
+        <div class="header">
+            <h1>Academic Excellence</h1>
+            <p>Educational Journey & Achievements</p>
+        </div>
+
+        <div class="education-grid">
+            <!-- Current Education -->
+            <div class="education-item current-education">
+                <div class="education-header">
+                    <div>
+                        <div class="institution">
+                            Nandha College of Technology
+                            <span class="current-badge">Current</span>
+                        </div>
+                        <div class="degree">B.E Computer Science Engineering</div>
+                    </div>
+                    <div class="date-badge">2022 - 2026</div>
+                </div>
+                <div class="performance-container">
+                    <div class="grade-display">
+                        <span class="grade-label">CGPA:</span>
+                        <span>7.85/10</span>
+                    </div>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 78.5%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Higher Secondary -->
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="institution">J.K.K. Natraja Matric Higher Secondary School</div>
+                        <div class="degree">Higher Secondary Certificate (HSC)</div>
+                    </div>
+                    <div class="date-badge">May 2022</div>
+                </div>
+                <div class="performance-container">
+                    <div class="grade-display">
+                        <span class="grade-label">Score:</span>
+                        <span>86.3%</span>
+                    </div>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 86.3%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary School -->
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="institution">J.K.K. Natraja Matric Higher Secondary School</div>
+                        <div class="degree">Secondary School Leaving Certificate (SSLC)</div>
+                    </div>
+                    <div class="date-badge">May 2020</div>
+                </div>
+                <div class="performance-container">
+                    <div class="grade-display">
+                        <span class="grade-label">Score:</span>
+                        <span>88.8%</span>
+                    </div>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 88.8%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-stats">
+            <div class="stat-item">
+                <span class="stat-number">7.85</span>
+                <div class="stat-label">Current CGPA</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">87.55%</span>
+                <div class="stat-label">Average Performance</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3+</span>
+                <div class="stat-label">Years in Engineering</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Consistent Excellence</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate performance bars on load
+        window.addEventListener('load', function() {
+            const fills = document.querySelectorAll('.performance-fill');
+            fills.forEach((fill, index) => {
+                setTimeout(() => {
+                    fill.style.transform = 'scaleX(1)';
+                }, index * 300);
+            });
+        });
+
+        // Add hover effects for education items
+        const educationItems = document.querySelectorAll('.education-item');
+        educationItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#a855f7';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('current-education')) {
+                    this.style.borderColor = 'transparent';
+                }
+            });
+        });
+    </script>
     <!-- LeetCode Progress Section -->
     <section class="section leetcode-progress" id="leetcode">
-        <div class="section-container">
+    <div class="section-container leetcode-grid">
+        
+        <!-- Left Side -->
+         
+        <div>
             <div class="section-header fade-in">
                 <h2 class="section-title">LeetCode Progress</h2>
                 <p class="section-subtitle">Track my coding journey and problem-solving skills</p>
@@ -948,7 +1265,7 @@
             <div class="progress-container fade-in">
                 <div class="progress-stats">
                     <div class="stat-item">
-                        <span class="stat-number" id="problems-solved">115+</span>
+                        <span class="stat-number" id="problems-solved">100+</span>
                         <span class="stat-label">Problems Solved</span>
                     </div>
                     <div class="stat-item">
@@ -970,9 +1287,34 @@
                     <i class="fas fa-external-link-alt"></i> View LeetCode Profile
                 </a>
             </div>
+            
         </div>
-    </section>
+       
+<div class="leetcode-chart">
+    <div class="circle-card">
+        <canvas id="easyChart" width="120" height="120"></canvas>
+        <p>Easy Problems</p>
+    </div>
+    <div class="circle-card">
+        <canvas id="mediumChart" width="120" height="120"></canvas>
+        <p>Medium Problems</p>
+    </div>
+    <div class="circle-card">
+        <canvas id="hardChart" width="120" height="120"></canvas>
+        <p>Hard Problems</p>
+    </div>
+    <div class="circle-card">
+        <canvas id="successChart" width="120" height="120"></canvas>
+        <p>Success Rate</p>
+    </div>
+</div>
 
+
+        
+    </div>
+</section>
+
+ 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="section-container">
@@ -1242,5 +1584,47 @@
 
         counterObserver.observe(leetcodeSection);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+function createChart(id, value, color) {
+    const ctx = document.getElementById(id).getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [value, 100 - value],
+                backgroundColor: [color, '#eee'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '70%',
+            responsive: false,
+            plugins: {
+                tooltip: { enabled: false },
+                legend: { display: false },
+                beforeDraw: chart => {
+                    const { width, height, ctx } = chart;
+                    ctx.restore();
+                    const fontSize = (height / 5).toFixed(2);
+                    ctx.font = fontSize + "px Arial";
+                    ctx.textBaseline = "middle";
+                    const text = value + "%",
+                          textX = Math.round((width - ctx.measureText(text).width) / 2),
+                          textY = height / 2;
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                }
+            }
+        }
+    });
+}
+
+createChart("easyChart", 60, "#4ade80");    // green
+createChart("mediumChart", 40, "#facc15"); // yellow
+createChart("hardChart", 10, "#ef4444");   // red
+createChart("successChart", 70, "#60a5fa");// blue
+</script>
+
 </body>
 </html>
